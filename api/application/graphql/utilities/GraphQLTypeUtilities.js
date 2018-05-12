@@ -34,8 +34,9 @@ exports.List = list => {
 exports.EnumType = enumType => {
   return new GraphQLEnumType(enumType);
 };
-exports.String = GraphQLString;
-exports.Int = GraphQLInt;
-exports.Float = GraphQLFloat;
-exports.ID = GraphQLID;
-exports.Boolean = GraphQLBoolean;
+
+exports.StringType = GraphQLString;
+exports.IntType = GraphQLInt;
+exports.FloatType = GraphQLFloat;
+exports.IdType = GraphQLID;
+exports.BoolType = GraphQLBoolean;

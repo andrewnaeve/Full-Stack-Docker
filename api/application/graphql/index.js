@@ -1,15 +1,16 @@
 const {
   Schema,
   ObjectType,
-  String
+  StringType
 } = require('./utilities/GraphQLTypeUtilities');
-const { GraphQLString, GraphQLObjectType } = require('graphql');
 
 const schema = Schema({
-  query: new GraphQLObjectType({
+  query: ObjectType({
     name: 'User',
     fields: {
-      firstName: { type: GraphQLString }
+      firstName: { type: StringType },
+      lastName: { type: StringType },
+      email: { type: StringType }
     }
   })
 });
