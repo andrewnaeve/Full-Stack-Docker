@@ -1,9 +1,8 @@
-const Boom = require('boom');
 const { graphiqlHapi } = require('apollo-server-hapi');
 const { graphqlHapi } = require('apollo-server-hapi');
 const schema = require('./application/graphql');
 
-const options = {
+const goodOptions = {
   ops: {
     interval: 1000
   },
@@ -22,6 +21,10 @@ const options = {
   }
 };
 
+exports.serverOptions = {
+  relativeTo: __dirname
+};
+
 exports.manifest = {
   server: {
     port: 8000
@@ -30,7 +33,7 @@ exports.manifest = {
     plugins: [
       {
         plugin: require('good'),
-        options
+        goodOptions
       },
       {
         plugin: graphqlHapi,
