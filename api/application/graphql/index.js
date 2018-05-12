@@ -6,12 +6,7 @@ const {
 
 const schema = Schema({
   query: ObjectType({
-    name: 'User',
-    fields: {
-      firstName: { type: StringType },
-      lastName: { type: StringType },
-      email: { type: StringType }
-    }
+    name: 'RootQuery'
   })
 });
 
