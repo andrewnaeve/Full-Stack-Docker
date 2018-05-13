@@ -26,5 +26,7 @@ services:
   adminer:
     image: adminer
     restart: always
+    env_file:
+      ./example.env
     ports:
       - 8080:8080
