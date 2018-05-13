@@ -8,8 +8,12 @@ services:
       args:
         PACKAGE_PATH: ./api
         WORKING_DIR: /src/api
+    expose:
+      - 8000
+    ports:
+      - 8000:8000
     env_file:
-      - ./example.env
+      - ./common.env
     volumes:
       - .:/src
     depends_on:
