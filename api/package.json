@@ -19,13 +19,21 @@
     "joi": "^13.3.0",
     "wreck": "^14.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  },
   "scripts": {
     "start": "nodemon server.js",
     "test": "jest --watch",
     "lint": "./node_modules/.bin/eslint eslint '**/*.js' --fix"
   },
-  "keywords": ["graphql", "hapi", "api", "server", "node"],
+  "keywords": [
+    "graphql",
+    "hapi",
+    "api",
+    "server",
+    "node"
+  ],
   "author": "Andrew Naeve",
   "license": "ISC"
 }

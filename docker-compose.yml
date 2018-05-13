@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+      args:
+        PACKAGE_PATH: ./api
+        WORKING_DIR: /src/api
+    env_file:
+      - ./example.env
+    volumes:
+      - .:/src
+    depends_on:
+      - postgres
+      - adminer
+    command: ["npm", "start"]
+
+  postgres:
+    image: postgres
+    restart: always
+    env_file:
+      ./example.env
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

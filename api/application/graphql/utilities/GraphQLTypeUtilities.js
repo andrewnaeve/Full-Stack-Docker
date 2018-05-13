@@ -28,7 +28,7 @@ exports.InputObjectType = object => {
 exports.InterfaceType = interfaceType => {
   return new GraphQLInterfaceType(interfaceType);
 };
-exports.List = list => {
+exports.ListType = list => {
   return new GraphQLList(list);
 };
 exports.EnumType = enumType => {

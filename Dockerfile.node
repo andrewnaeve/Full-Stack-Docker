@@ -2,17 +2,16 @@ FROM node:8.9.4
 
 ARG PACKAGE_PATH=
 ARG WORKING_DIR=/src
-ARG LIB_DIR=$WORKING_DIR/lib
 
 WORKDIR $WORKING_DIR
 
 COPY $PACKAGE_PATH/package.json $WORKING_DIR/package.json
 COPY $PACKAGE_PATH/package-lock.json $WORKING_DIR/package-lock.json
 RUN npm install
+RUN npm install -g nodemon
 
 COPY . /src
-COPY ./lib/ $LIB_DIR/
 
 VOLUME $WORKING_DIR/node_modules
-VOLUME $LIB_DIR
+
 CMD [ "npm", "start" ]
