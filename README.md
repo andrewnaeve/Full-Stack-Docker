@@ -1,23 +1,23 @@
-# HapiGraphQL
+# Full-stack, Multi-core, Node / GraphQL / Hapi / React / Postgres running in Docker
 
-## Multi-threaded GraphQL / Hapi server
-
-This repository is a launching off point for a multi-threaded GraphQL server built on Hapi, Node, and PostgreSQL, running in Docker containers.
+This repository is a launching off point for a full stack React, GraphQL / Hapi, Node, and Postgres app, running in Docker containers.
 
 ## Start
 
 To get started, download Docker, cd into the root directory, and `docker-compose up`
-With that, you get access to preconfigured Node and PostgreSQL containers, running GraphQL.
 
 ## Node
 
 Node's Cluster module spins up one Hapi server for every CPU core on the host machine, for increased performance and load handling.
 
-## API
+## React
 
-Start writing GraphQL queries and mutations, and you can access them on port `https://localhost:8000/graphql`
-Graphiql, a special self documentation tool for viewing your data, is located on `https://localhost:8000/graphiql`
+A create-react-app scaffold is running in its own container, and will proxy all unknown routes to the API container through the proxy option in the package.json.
 
-## GraphQL
+## GraphQL / Hapi
 
-GraphQL scaffold includes a blank schema and folder structure, but will not run until you populate it.
+Any request made to `/graphql` with be proxied to the Node container, and served by Hapi. Fill out a schema file in the GraphQL scaffold to get started.
+
+## Postgres
+
+Postgres integration happens through Knex, a query builder, and Objection, an ORM. A preconfigured connection can be found in api/src/lib

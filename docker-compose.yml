@@ -21,16 +21,40 @@ services:
       - adminer
     command: ["npm", "start"]
 
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+      args:
+        PACKAGE_PATH: ./frontend
+        WORKING_DIR: /src/frontend
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    environment:
+      BACKEND: api:8000
+      HTTPS: "true"
+      NODE_PATH: /src/frontend/src
+      REACT_APP_CLIENT_ID: client_id
+    env_file:
+      - ./common.env
+    volumes:
+      - .:/src  
+    depends_on:
+      - api
+    command: ["npm", "start"]
+
   postgres:
     image: postgres
     restart: always
     env_file:
-      ./example.env
+      ./common.env
 
   adminer:
     image: adminer
     restart: always
     env_file:
-      ./example.env
+      ./common.env
     ports:
       - 8080:8080
