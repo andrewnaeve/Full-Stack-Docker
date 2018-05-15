@@ -1,4 +1,5 @@
-# Full-stack, Multi-core, Node / GraphQL / Hapi / React / Postgres running in Docker
+# Full Stack Docker
+## Multi-core GraphQL / Hapi / React / Node / Postgres running in Docker
 
 This repository is a launching off point for a full stack React, GraphQL / Hapi, Node, and Postgres app, running in Docker containers.
 
