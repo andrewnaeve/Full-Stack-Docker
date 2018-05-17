@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.5'
 
 services:
   api:
@@ -33,10 +33,10 @@ services:
     ports:
       - 3000:3000
     environment:
-      BACKEND: api:8000
-      HTTPS: "true"
-      NODE_PATH: /src/frontend/src
-      REACT_APP_CLIENT_ID: client_id
+      - BACKEND=api:8000
+      - HTTPS="true"
+      - NODE_PATH=/src/frontend/src
+      - CHOKIDAR_USEPOLLING=true
     env_file:
       - ./common.env
     volumes:

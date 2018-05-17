@@ -5,17 +5,11 @@ services:
     container_name: frontend-prod
     build:
       context: .
-      dockerfile: Dockerfile.webpack-build
-      args:
-        SRC_PATH: ./frontend
-        NGINX_CONFIG: ./frontend.conf
-        NODE_PATH: /usr/src/frontend/src
-        HTTPS: "true"
-        REACT_APP_CLIENT_ID: 02f39728-ec0c-4f7f-a0f0-af565a54fc7d
-        REACT_APP_ENV: production
+      dockerfile: Dockerfile.prod
     environment:
       NODE_PATH: /usr/src/frontend/src
       REACT_APP_ENV: production
+      HTTPS: "true"
     env_file:
       - ./common.env
     depends_on:
