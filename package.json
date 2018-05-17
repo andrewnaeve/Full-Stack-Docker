@@ -1,0 +1,23 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "description": "Example docker setup",
+  "main": "docker-compose up",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewnaeve/Full-Stack-Docker.git"
+  },
+  "keywords": [
+    "docker",
+    "hapi",
+    "react",
+    "graphql",
+    "postgres"
+  ],
+  "author": "Andrew Naeve",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewnaeve/Full-Stack-Docker/issues"
+  },
+  "homepage": "https://github.com/andrewnaeve/Full-Stack-Docker#readme"
+}

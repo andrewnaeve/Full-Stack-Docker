@@ -1,13 +1,47 @@
 version: '3.5'
 
 services:
-
   frontend-prod:
     container_name: frontend-prod
     build:
       context: .
-      dockerfile: Dockerfile-prod
-    environment: 
-      NODE_PATH: /src/frontend/src
+      dockerfile: Dockerfile.webpack-build
+      args:
+        SRC_PATH: ./frontend
+        NGINX_CONFIG: ./frontend.conf
+        NODE_PATH: /usr/src/frontend/src
+        HTTPS: "true"
+        REACT_APP_CLIENT_ID: 02f39728-ec0c-4f7f-a0f0-af565a54fc7d
+        REACT_APP_ENV: production
+    environment:
+      NODE_PATH: /usr/src/frontend/src
+      REACT_APP_ENV: production
+    env_file:
+      - ./common.env
+    depends_on:
+      - api-prod
+  
+  api-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+      args:
+        PACKAGE_PATH: ./api
+        WORKING_DIR: /usr/src/api
+    expose:
+      - 8000
     ports:
-      - '80:80'
+      - 8000:8000
+    env_file:
+      - ./common.env
+    volumes:
+      - .:/src
+    depends_on:
+      - postgres
+    command: ["npm", "start"]
+
+  postgres:
+    image: postgres
+    restart: always
+    env_file:
+      ./common.env
