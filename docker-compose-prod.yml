@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+
+  frontend-prod:
+    container_name: frontend-prod
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    environment: 
+      NODE_PATH: /src/frontend/src
+    ports:
+      - '80:80'
