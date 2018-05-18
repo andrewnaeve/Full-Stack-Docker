@@ -37,7 +37,7 @@ services:
     environment:
       - REACT_APP_ENV=development
       - BACKEND=api:8000
-      - HTTPS="true"
+      - HTTPS=true
       - NODE_PATH=/src/frontend/src
       - CHOKIDAR_USEPOLLING=true
     env_file:
