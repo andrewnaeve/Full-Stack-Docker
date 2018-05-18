@@ -12,6 +12,8 @@ services:
       - 8000
     ports:
       - 8000:8000
+    environment:
+      - NODE_ENV=development
     env_file:
       - ./common.env
     volumes:
@@ -33,6 +35,7 @@ services:
     ports:
       - 3000:3000
     environment:
+      - REACT_APP_ENV=development
       - BACKEND=api:8000
       - HTTPS="true"
       - NODE_PATH=/src/frontend/src
