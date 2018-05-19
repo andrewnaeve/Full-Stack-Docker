@@ -1,21 +1,18 @@
-const {
-  Schema,
-  ObjectType,
-  string
-} = require('./utilities/GraphQLTypeUtilities');
+const { Schema, ObjectType, string } = require('./utilities/GraphQLTypeUtilities');
+const { authMutations, authQueries } = require('./auth');
 
 const schema = Schema({
   query: ObjectType({
     name: 'RootQueryType',
-    fields: {
-      example: { type: string }
-    }
+    fields: () => ({
+      ...authQueries
+    })
   }),
   mutation: ObjectType({
     name: 'RootMutationType',
-    fields: {
-      example: { type: string }
-    }
+    fields: () => ({
+      ...authMutations
+    })
   })
 });
 
