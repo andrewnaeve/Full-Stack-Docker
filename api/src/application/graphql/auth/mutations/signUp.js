@@ -1,6 +1,6 @@
 const Boom = require('boom');
-const userSignUpOutputType = require('../types/userSignUpOutputType');
-const userSignUpInputType = require('../types/userSignUpInputType');
+const userSignUpOutputType = require('../types/user/userSignUpOutputType');
+const userSignUpInputType = require('../types/user/userSignUpInputType');
 const { saveUser } = require('../db/queries');
 
 module.exports = {

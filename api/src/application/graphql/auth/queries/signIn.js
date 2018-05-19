@@ -1,7 +1,7 @@
 const Boom = require('boom');
-const { string } = require('../../utilities/GraphQLTypeUtilities');
-const userSignInInputType = require('../types/userSignInInputType');
-const userSignInOutputType = require('../types/userSignInOutputType');
+const { string } = require('../../utilities/type-utilities');
+const userSignInInputType = require('../types/user/userSignInInputType');
+const userSignInOutputType = require('../types/user/userSignInOutputType');
 const { validateUser } = require('../db/queries');
 
 module.exports = {

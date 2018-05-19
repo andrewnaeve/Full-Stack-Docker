@@ -1,5 +1,5 @@
-const { ListType } = require('../../utilities/GraphQLTypeUtilities');
-const userListType = require('../types/userListType');
+const { ListType } = require('../../utilities/type-utilities');
+const userListType = require('../types/user/userListType');
 const { getAllUsers } = require('../db/queries');
 
 module.exports = {

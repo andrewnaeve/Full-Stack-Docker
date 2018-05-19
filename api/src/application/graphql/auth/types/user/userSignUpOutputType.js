@@ -1,11 +1,11 @@
-const { ObjectType, bool, id } = require('../../utilities/GraphQLTypeUtilities');
+const { ObjectType, bool, id } = require('../../../utilities/type-utilities');
 
 const userSignUpOutputType = ObjectType({
   name: 'userSignUpOutputType',
-  fields: {
+  fields: () => ({
     id: { type: id },
     result: { type: bool }
-  }
+  })
 });
 
 module.exports = userSignUpOutputType;

@@ -1,13 +1,13 @@
-const { ObjectType, string, id } = require('../../utilities/GraphQLTypeUtilities');
+const { ObjectType, string, id } = require('../../../utilities/type-utilities');
 
 const userListType = ObjectType({
   name: 'UserListType',
-  fields: {
+  fields: () => ({
     id: { type: id },
     first_name: { type: string },
     last_name: { type: string },
     email: { type: string }
-  }
+  })
 });
 
 module.exports = userListType;

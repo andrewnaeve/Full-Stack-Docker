@@ -2,44 +2,34 @@ const Boom = require('boom');
 const User = require('./user-model');
 const bcrypt = require('bcrypt');
 
-const hashPassword = plainText => {
-  const saltRounds = 10;
-  return bcrypt.hash(plainText, saltRounds);
-};
-
 exports.saveUser = async ({ firstName, lastName, email, password }) => {
-  const hash = await hashPassword(password);
-  const newUser = await User.query().insert({
-    first_name: firstName,
-    last_name: lastName,
-    email: email,
-    password: hash
-  });
-  if (!newUser) {
+  try {
+    const newUser = await User.query().insert({
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      password: password
+    });
     return {
-      result: false
+      id: newUser.id
     };
+  } catch (error) {
+    if (error.code === '23505') {
+      throw new Error('This email is already in use');
+    } else {
+      throw new Error(error);
+    }
   }
-  return {
-    id: newUser.id,
-    result: true
-  };
 };
 
 exports.validateUser = async ({ email, password }) => {
-  const user = await User.query().where('email', email);
-  const hash = user[0].password;
-  const id = user[0].id;
-
-  const match = await bcrypt.compare(password, hash);
-  if (!match) {
-    return {
-      result: false
-    };
-  }
+  const user = await User.query()
+    .first()
+    .where('email', email);
+  const passwordValid = await user.verifyPassword(password);
   return {
-    id: id,
-    result: true
+    id: user.id,
+    result: passwordValid
   };
 };
 

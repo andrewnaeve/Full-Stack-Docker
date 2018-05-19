@@ -1,4 +1,4 @@
-const { Schema, ObjectType, string } = require('./utilities/GraphQLTypeUtilities');
+const { Schema, ObjectType, string } = require('./utilities/type-utilities');
 const { authMutations, authQueries } = require('./auth');
 
 const schema = Schema({
