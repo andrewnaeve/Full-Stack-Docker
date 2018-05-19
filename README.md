@@ -36,6 +36,24 @@ query listAllUsers {
 ```
 
 ```
+mutation signUp($firstName: String!, $lastName: String!, $email:String!, $password:String!){
+  signUp(user:{firstName: $firstName, lastName:$lastName, email: $email, password:$password}){
+    result,
+    id
+  }
+}
+
+query variables:
+
+{
+  "firstName": "Some",
+  "lastName": "Guy",
+  "email": "nobody@gmail.com"
+  "password": "whyhellothere"
+}
+```
+
+```
 query signIn($email:String!, $password:String!){
   signIn(user:{email: $email, password:$password}){
     result,
