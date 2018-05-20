@@ -1,6 +1,6 @@
 const { Model } = require('objection');
-
 const config = require('../../config');
+
 const knex = require('knex')({
   debug: false, // process.env.DEBUG,
   client: 'pg',

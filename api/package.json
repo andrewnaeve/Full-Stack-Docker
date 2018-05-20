@@ -6,6 +6,7 @@
   "dependencies": {
     "apollo-server-hapi": "^1.3.6",
     "bcrypt": "^2.0.1",
+    "boom": "^7.2.0",
     "confidence": "^3.0.2",
     "dotenv": "^5.0.1",
     "glue": "^5.0.0",
@@ -28,7 +29,13 @@
     "test": "jest --watch",
     "lint": "./node_modules/.bin/eslint eslint '**/*.js' --fix"
   },
-  "keywords": ["graphql", "hapi", "api", "server", "node"],
+  "keywords": [
+    "graphql",
+    "hapi",
+    "api",
+    "server",
+    "node"
+  ],
   "author": "Andrew Naeve",
   "license": "ISC",
   "repository": {

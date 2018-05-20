@@ -1,21 +1,13 @@
 exports.saveUser = async ({ firstName, lastName, email, password, User }) => {
-  try {
-    const newUser = await User.query().insert({
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      password: password
-    });
-    return {
-      id: newUser.id
-    };
-  } catch (error) {
-    if (error.code === '23505') {
-      throw new Error('This email is already in use');
-    } else {
-      throw new Error(error);
-    }
-  }
+  const newUser = await User.query().insert({
+    first_name: firstName,
+    last_name: lastName,
+    email: email,
+    password: password
+  });
+  return {
+    id: newUser.id
+  };
 };
 
 exports.validateUser = async ({ email, password, User }) => {

@@ -1,6 +1,6 @@
 const { graphiqlHapi } = require('apollo-server-hapi');
 const { graphqlHapi } = require('apollo-server-hapi');
-const schema = require('./src/application/graphql');
+const schema = require('./src/graphql');
 const { context } = require('./context');
 
 const goodOptions = {
