@@ -12,7 +12,7 @@ module.exports = {
         type: userSignInInputType
       }
     },
-    resolve: async (_, { user: { email, password } }) => {
+    resolve: async (_, { user: { email, password } }, { models: User }) => {
       const { id, result } = await validateUser({ email, password });
       return {
         id,

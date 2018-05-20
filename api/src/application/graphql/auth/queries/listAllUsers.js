@@ -5,8 +5,8 @@ const { getAllUsers } = require('../db/queries');
 module.exports = {
   listAllUsers: {
     type: ListType(userListType),
-    resolve: async () => {
-      const allUsers = await getAllUsers();
+    resolve: async (_, __, { models: { User } }) => {
+      const allUsers = await getAllUsers({ User });
       return allUsers;
     }
   }

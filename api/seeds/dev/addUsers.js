@@ -13,5 +13,3 @@ exports.seed = function(knex, Promise) {
       ]);
     });
 };
-
-// password = awesomex

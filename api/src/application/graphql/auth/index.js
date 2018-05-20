@@ -1,5 +1,4 @@
 const { signUp } = require('./mutations/signUp');
-
 const { signIn } = require('./queries/signIn');
 const { listAllUsers } = require('./queries/listAllUsers');
 

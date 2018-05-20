@@ -1,6 +1,7 @@
 const { graphiqlHapi } = require('apollo-server-hapi');
 const { graphqlHapi } = require('apollo-server-hapi');
 const schema = require('./src/application/graphql');
+const { context } = require('./context');
 
 const goodOptions = {
   ops: {
@@ -40,7 +41,8 @@ exports.manifest = {
         options: {
           path: '/graphql',
           graphqlOptions: {
-            schema: schema
+            schema: schema,
+            context
           },
           route: {
             cors: true

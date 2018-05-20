@@ -1,8 +1,4 @@
-const Boom = require('boom');
-const User = require('./user-model');
-const bcrypt = require('bcrypt');
-
-exports.saveUser = async ({ firstName, lastName, email, password }) => {
+exports.saveUser = async ({ firstName, lastName, email, password, User }) => {
   try {
     const newUser = await User.query().insert({
       first_name: firstName,
@@ -22,7 +18,7 @@ exports.saveUser = async ({ firstName, lastName, email, password }) => {
   }
 };
 
-exports.validateUser = async ({ email, password }) => {
+exports.validateUser = async ({ email, password, User }) => {
   const user = await User.query()
     .first()
     .where('email', email);
@@ -33,7 +29,7 @@ exports.validateUser = async ({ email, password }) => {
   };
 };
 
-exports.getAllUsers = () => {
+exports.getAllUsers = ({ User }) => {
   return User.query().then(users => {
     return users.map(attr => ({
       id: attr.id,

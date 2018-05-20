@@ -1,5 +1,6 @@
 const { Schema, ObjectType, string } = require('./utilities/type-utilities');
 const { authMutations, authQueries } = require('./auth');
+const knex = require('../../lib/knex');
 
 const schema = Schema({
   query: ObjectType({

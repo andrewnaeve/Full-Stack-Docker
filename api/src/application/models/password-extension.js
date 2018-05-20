@@ -1,7 +1,8 @@
-const BCRYPT_REGEXP = /^\$2[ayb]\$[0-9]{2}\$[A-Za-z0-9./]{53}$/;
 const bcrypt = require('bcrypt');
 
 function Password(Model) {
+  const bcryptRegex = /^\$2[ayb]\$[0-9]{2}\$[A-Za-z0-9./]{53}$/;
+
   return class extends Model {
     $beforeInsert(context) {
       const maybePromise = super.$beforeInsert(context);
@@ -39,7 +40,7 @@ function Password(Model) {
     }
 
     static isBcryptHash(str) {
-      return BCRYPT_REGEXP.test(str);
+      return bcryptRegex.test(str);
     }
   };
 }
