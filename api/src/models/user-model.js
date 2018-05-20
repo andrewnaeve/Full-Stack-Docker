@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { Password } = require('./password-extension');
+const { Password } = require('../lib/password-extension');
 const Model = require('../lib/objection');
 
 class User extends Password(Model) {

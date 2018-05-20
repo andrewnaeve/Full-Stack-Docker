@@ -81,4 +81,4 @@ query variables:
 
 ## Postgres
 
-Postgres integration happens through Knex, a query builder, and Objection, an ORM. A preconfigured connection can be found in api/src/lib. Models can be placed in context.js to automatically place models onto GraphQL's context argument.
+Postgres integration happens through Knex, a query builder, and Objection, an ORM. Models can be required in context.js to automatically place models onto GraphQL's context argument.

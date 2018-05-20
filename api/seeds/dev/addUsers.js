@@ -5,6 +5,18 @@ exports.seed = function(knex, Promise) {
     .then(() => {
       return knex('users').insert([
         {
+          first_name: 'Andrew',
+          last_name: 'Naeve',
+          email: 'arnaeve@gmail.com',
+          password: '$2b$10$oWiC.Tu.24waB.vr/NsCNuMMedYIuYuLa4wzp3j9TvIU2ARnoQUoW	'
+        },
+        {
+          first_name: 'Matt',
+          last_name: 'Billings',
+          email: 'mbillings@gmail.com',
+          password: '$2b$10$wU49CuBkcprxrflnQuVNJu9y1nTzKzeovxf2Oc.ZgNBX34mi.wkuC'
+        },
+        {
           first_name: 'Xander',
           last_name: 'Cruise',
           email: 'friskydingo@gmail.com',
