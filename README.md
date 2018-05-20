@@ -6,11 +6,21 @@ This repository is a launching off point for a full stack React, GraphQL / Hapi,
 
 ## Start
 
-To get started, download Docker, cd into the root directory, and
+## Docker
+
+To get started in development, download Docker, cd into the root directory, and
 
 ```
 docker-compose up
 ```
+
+To build for production, run:
+
+```
+docker-compose -f docker-compose-prod.yml up -d --build
+```
+
+This will automatcally build a container with the frontend create-react-app build being served by NGINX.
 
 ## Node
 
