@@ -1,4 +1,3 @@
-const bcrypt = require('bcrypt');
 const { Password } = require('../lib/password-extension');
 const Model = require('../lib/objection');
 
