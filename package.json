@@ -7,13 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/andrewnaeve/Full-Stack-Docker.git"
   },
-  "keywords": [
-    "docker",
-    "hapi",
-    "react",
-    "graphql",
-    "postgres"
-  ],
+  "keywords": ["docker", "apollo", "apollo server 2", "react", "graphql", "postgres"],
   "author": "Andrew Naeve",
   "license": "MIT",
   "bugs": {

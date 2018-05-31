@@ -1,18 +1,14 @@
-require('dotenv').config();
-const Glue = require('glue');
-const { manifest, serverOptions } = require('./manifest');
+const { ApolloServer } = require('apollo-server');
+const { context } = require('./context');
+const schema = require('./src/graphql/schema');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 
-const startServer = async function() {
-  try {
-    const server = await Glue.compose(manifest, serverOptions);
-    await server.start();
-    console.log(`Worker ${process.pid} running on port ${server.info.port}`);
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
+const startServer = () => {
+  const server = new ApolloServer({ schema, context });
+  server.listen({ http: { port: 8000 } }).then(({ url }) => {
+    console.log(`🚀  Server ready at ${url}`);
+  });
 };
 
 if (cluster.isMaster) {

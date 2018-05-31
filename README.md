@@ -1,8 +1,8 @@
 # Full Stack Docker
 
-## Multi-core Node / GraphQL / Hapi / React / Postgres running in Docker
+## Multi-core Node / Apollo Server 2 / React / Postgres running in Docker
 
-This repository is a launching off point for a full stack React, GraphQL / Hapi, Node, and Postgres app, running in Docker containers.
+This repository is a launching off point for a full stack, multi-core, React, Apollo Server 2, Node, and Postgres app, running in Docker containers.
 
 ## Start
 
@@ -26,13 +26,11 @@ This will automatcally build a container with the frontend create-react-app buil
 
 Node's Cluster module spins up one Hapi server for every CPU core on the host machine, for increased performance and load handling.
 
-## React
+## Apollo Server 2
 
-A create-react-app scaffold is running in its own container, and will proxy all unknown routes to the API container through the proxy option in the package.json.
+Apollo Server 2 has been implemented with a permissions middleware layer using GraphQL Shield. The schema has been modularized, with each 'feature' folder combining types and resolvers, before re-exporting and combining in schema.js. Because all queries and mutations are using the 'extend' feature, it is necessary to have a blank query and schema that the others extend from.
 
-## GraphQL / Hapi
-
-Any request made to `/graphql` with be proxied to the Node container, and served by Hapi. Example sign-in, sign-up, and listAllUsers queries and mutations provided. For example:
+Any request made to `/graphql` with be proxied to the Node container, and served by Apollo Server. Example sign-in, sign-up, and listAllUsers queries and mutations provided. For example:
 
 ```
 query listAllUsers {
@@ -47,7 +45,7 @@ query listAllUsers {
 
 ```
 mutation signUp($firstName: String!, $lastName: String!, $email:String!, $password:String!){
-  signUp(user:{firstName: $firstName, lastName:$lastName, email: $email, password:$password}){
+  signUp(firstName: $firstName, lastName:$lastName, email: $email, password:$password){
     result,
     id
   }
@@ -56,10 +54,10 @@ mutation signUp($firstName: String!, $lastName: String!, $email:String!, $passwo
 query variables:
 
 {
-  "firstName": "Some",
-  "lastName": "Guy",
-  "email": "nobody@gmail.com"
-  "password": "whyhellothere"
+  "firstName": "Xander",
+  "lastName": "Cruise",
+  "email": "xsticles@gmail.com"
+  "password": "flowers4nearl"
 }
 ```
 
@@ -78,6 +76,10 @@ query variables:
   "password": "awesomex"
 }
 ```
+
+## React
+
+A create-react-app scaffold is running in its own container, and will proxy all unknown routes to the API container through the proxy option in the package.json.
 
 ## Postgres
 
