@@ -3,9 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apollo-cache-inmemory": "^1.2.5",
+    "apollo-client": "^2.3.5",
+    "apollo-link": "^1.2.2",
+    "apollo-link-error": "^1.1.0",
+    "apollo-link-http": "^1.5.4",
+    "apollo-link-state": "^0.4.1",
+    "axios": "^0.18.0",
+    "formik": "^0.11.11",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "react-proptypes": "^1.0.0",
+    "react-reach": "^0.4.1",
+    "react-scripts": "^2.0.0-next.3e165448",
+    "react-spring": "^5.4.0",
+    "styled-components": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
