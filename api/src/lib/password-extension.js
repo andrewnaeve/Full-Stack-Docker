@@ -1,6 +1,6 @@
-const bcrypt = require('bcrypt');
+import bcrypt from 'bcrypt';
 
-function Password(Model) {
+export function Password(Model) {
   const bcryptRegex = /^\$2[ayb]\$[0-9]{2}\$[A-Za-z0-9./]{53}$/;
 
   return class extends Model {
@@ -44,5 +44,3 @@ function Password(Model) {
     }
   };
 }
-
-module.exports = { Password };

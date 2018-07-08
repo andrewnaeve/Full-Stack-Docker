@@ -1,5 +1,5 @@
-const { Model } = require('objection');
-const knex = require('./knex');
+import { Model } from 'objection';
+import knex from './knex';
 Model.knex(knex);
 
-module.exports = Model;
+export default Model;

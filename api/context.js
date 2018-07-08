@@ -1,7 +1,7 @@
-const knex = require('./src/lib/knex');
-const { models } = require('./src/models');
+import knex from './src/lib/knex';
+import { models } from './src/models';
 
-exports.context = {
+export const context = {
   knex,
   models
 };

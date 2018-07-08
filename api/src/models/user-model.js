@@ -1,8 +1,8 @@
-const { Password } = require('../lib/password-extension');
-const guid = require('objection-guid')();
-const Model = require('../lib/objection');
+import { Password } from '../lib/password-extension';
+import Model from '../lib/objection';
+import guid from 'objection-guid';
 
-class User extends guid(Password(Model)) {
+class User extends guid()(Password(Model)) {
   static get tableName() {
     return 'users';
   }
@@ -20,4 +20,4 @@ class User extends guid(Password(Model)) {
   }
 }
 
-module.exports = User;
+export default User;

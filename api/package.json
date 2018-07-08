@@ -7,6 +7,7 @@
     "apollo-server": "^2.0.0-beta.2",
     "bcrypt": "^2.0.1",
     "confidence": "^3.0.2",
+    "esm": "^3.0.64",
     "graphql": "^0.13.2",
     "graphql-middleware": "^1.2.5",
     "graphql-shield": "^2.0.6",
@@ -24,7 +25,7 @@
     "nodemon": "^1.17.4"
   },
   "scripts": {
-    "start": "npm i && knex migrate:latest && knex seed:run && nodemon server.js",
+    "start": "npm i && knex migrate:latest && knex seed:run && nodemon index.js",
     "test": "jest --watch",
     "lint": "./node_modules/.bin/eslint eslint '**/*.js' --fix"
   },

@@ -1,4 +1,4 @@
-const Model = require('../lib/objection');
+import Model from '../lib/objection';
 
 class StripeCustomer extends Model {
   static get tableName() {
@@ -18,4 +18,4 @@ class StripeCustomer extends Model {
   }
 }
 
-module.exports = StripeCustomer;
+export default StripeCustomer;
