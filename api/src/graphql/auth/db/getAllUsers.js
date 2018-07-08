@@ -1,4 +1,4 @@
-exports.getAllUsers = ({ User }) => {
+export const getAllUsers = ({ User }) => {
   return User.query().then(users => {
     return users.map(attr => ({
       id: attr.id,

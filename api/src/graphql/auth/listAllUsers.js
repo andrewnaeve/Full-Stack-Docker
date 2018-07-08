@@ -1,7 +1,7 @@
-const { gql } = require('apollo-server');
-const { getAllUsers } = require('./db/getAllUsers');
+import { gql } from 'apollo-server';
+import { getAllUsers } from './db/getAllUsers';
 
-exports.typeDefs = gql`
+export const typeDefs = gql`
   type User {
     id: ID
     first_name: String
@@ -14,7 +14,7 @@ exports.typeDefs = gql`
   }
 `;
 
-exports.resolvers = {
+export const resolvers = {
   Query: {
     listAllUsers: async (_, __, { models: { User } }) => {
       return getAllUsers({ User });

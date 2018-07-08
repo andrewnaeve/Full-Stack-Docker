@@ -1,4 +1,4 @@
-exports.saveUser = async ({ firstName, lastName, email, password, User }) => {
+export const saveUser = async ({ firstName, lastName, email, password, User }) => {
   const newUser = await User.query().insert({
     first_name: firstName,
     last_name: lastName,

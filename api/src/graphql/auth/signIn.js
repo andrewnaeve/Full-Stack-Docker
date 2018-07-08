@@ -1,7 +1,7 @@
-const { gql } = require('apollo-server');
-const { validateUser } = require('./db/validateUser');
+import { gql } from 'apollo-server';
+import { validateUser } from './db/validateUser';
 
-exports.typeDefs = gql`
+export const typeDefs = gql`
   type SignInOutputType {
     id: ID
   }
@@ -11,7 +11,7 @@ exports.typeDefs = gql`
   }
 `;
 
-exports.resolvers = {
+export const resolvers = {
   Mutation: {
     signIn: async (_, { email, password }, { models: { User } }) => {
       const { id, result, reason } = await validateUser({ email, password, User });

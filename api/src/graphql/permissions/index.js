@@ -1,7 +1,7 @@
-const { shield, and, or, not } = require('graphql-shield');
-const { isAuthenticated } = require('./rules');
+import { shield, and, or, not } from 'graphql-shield';
+import { isAuthenticated } from './rules';
 
-module.exports = shield({
+export default shield({
   Query: {
     listAllUsers: isAuthenticated
   }

@@ -1,17 +1,12 @@
-const merge = require('lodash.merge');
-const { typeDefs: ListAllUsersTypes, resolvers: listAllUsersResolver } = require('./listAllUsers');
-const { typeDefs: SignUpTypes, resolvers: SignUpResolver } = require('./signUp');
-const { typeDefs: SignInTypes, resolvers: SignInResolver } = require('./signIn');
+import merge from 'lodash.merge';
+import { typeDefs as ListAllUsersTypes, resolvers as listAllUsersResolver } from './listAllUsers';
+import { typeDefs as SignUpTypes, resolvers as SignUpResolver } from './signUp';
+import { typeDefs as SignInTypes, resolvers as SignInResolver } from './signIn';
 
-const typeDefs = `
+export const typeDefs = `
   ${ListAllUsersTypes}
   ${SignUpTypes}
   ${SignInTypes}
 `;
 
-const resolvers = merge(listAllUsersResolver, SignUpResolver, SignInResolver);
-
-module.exports = {
-  typeDefs,
-  resolvers
-};
+export const resolvers = merge(listAllUsersResolver, SignUpResolver, SignInResolver);

@@ -1,10 +1,10 @@
-const { rule } = require('graphql-shield');
+import { rule } from 'graphql-shield';
 
-exports.isAuthenticated = rule()(async (parent, args, ctx, info) => {
+export const isAuthenticated = rule()(async (parent, args, ctx, info) => {
   // return ctx.user !== null;
   return true;
 });
 
-exports.isAdmin = rule()(async (parent, args, ctx, info) => {
+export const isAdmin = rule()(async (parent, args, ctx, info) => {
   // return ctx.user.role === 'admin';
 });

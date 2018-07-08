@@ -1,4 +1,4 @@
-exports.validateUser = async ({ email, password, User }) => {
+export const validateUser = async ({ email, password, User }) => {
   const user = await User.query()
     .first()
     .where('email', email);
