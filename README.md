@@ -30,6 +30,8 @@ Node's Cluster module spins up one Hapi server for every CPU core on the host ma
 
 Apollo Server 2 has been implemented with a permissions middleware layer using GraphQL Shield. The schema has been modularized, with each 'feature' folder combining types and resolvers, before re-exporting and combining in schema.js. Because all queries and mutations are using the 'extend' feature, it is necessary to have a blank query and schema that the others extend from.
 
+ESM is providing ES module support until such time that Node & Node library authors have fully implemented them.
+
 Any request made to `/graphql` with be proxied to the Node container, and served by Apollo Server. Example sign-in, sign-up, and listAllUsers queries and mutations provided. For example:
 
 ```
