@@ -1,0 +1,7 @@
+version: '3.5'
+
+services:
+  frontend:
+    environment:
+      CHOKIDAR_USEPOLLING=true
+

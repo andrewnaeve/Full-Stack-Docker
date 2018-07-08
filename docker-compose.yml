@@ -39,11 +39,10 @@ services:
       - BACKEND=api:8000
       - HTTPS=true
       - NODE_PATH=/src/frontend/src
-      - CHOKIDAR_USEPOLLING=true
     env_file:
       - ./common.env
     volumes:
-      - .:/src  
+      - .:/src
     depends_on:
       - api
     command: ["npm", "start"]
