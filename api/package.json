@@ -4,7 +4,7 @@
   "description": "Multi-threaded GraphQL Hapi Server",
   "main": "server.js",
   "dependencies": {
-    "apollo-server": "^2.0.0-beta.2",
+    "apollo-server": "^2.0.0-rc.5",
     "bcrypt": "^2.0.1",
     "confidence": "^3.0.2",
     "esm": "^3.0.64",
