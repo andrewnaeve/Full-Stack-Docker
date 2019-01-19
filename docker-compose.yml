@@ -38,7 +38,7 @@ services:
       - REACT_APP_ENV=development
       - BACKEND=api:8000
       - HTTPS=true
-      - NODE_PATH=/src/frontend/src
+      - NODE_PATH=/usr/src/
     env_file:
       - ./common.env
     volumes:
