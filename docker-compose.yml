@@ -6,8 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile.node
       args:
-        PACKAGE_PATH: ./api
-        WORKING_DIR: /src/api
+        PACKAGE_PATH: api
+        WORKING_DIR: /usr/src/
     expose:
       - 8000
     ports:
@@ -17,7 +17,7 @@ services:
     env_file:
       - ./common.env
     volumes:
-      - .:/src
+      - ./api:/usr/src
     depends_on:
       - postgres
       - adminer
@@ -28,8 +28,8 @@ services:
       context: .
       dockerfile: Dockerfile.node
       args:
-        PACKAGE_PATH: ./frontend
-        WORKING_DIR: /src/frontend
+        PACKAGE_PATH: frontend
+        WORKING_DIR: /usr/src/
     expose:
       - 3000
     ports:
@@ -42,7 +42,7 @@ services:
     env_file:
       - ./common.env
     volumes:
-      - .:/src
+      - ./frontend:/usr/src
     depends_on:
       - api
     command: ["npm", "start"]
