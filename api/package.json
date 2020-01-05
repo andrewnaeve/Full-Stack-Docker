@@ -7,7 +7,7 @@
     "apollo-server": "^2.3.1",
     "bcrypt": "^3.0.3",
     "confidence": "^4.0.1",
-    "esm": "3.0.84",
+    "esm": "3.1.0",
     "graphql": "14.0.2",
     "graphql-middleware": "^3.0.0",
     "graphql-shield": "^5.1.0",
