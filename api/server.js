@@ -10,7 +10,6 @@ const startServer = () => {
     console.log(`🚀  Server ready at ${url}`);
   });
 };
-
 if (process.env.NODE_ENV === 'production') {
   if (cluster.isMaster) {
     console.log(`Master ${process.pid} is running`);

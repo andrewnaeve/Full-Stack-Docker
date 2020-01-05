@@ -24,7 +24,7 @@ This will automatcally build a container with the frontend create-react-app buil
 
 ## Node
 
-Node's Cluster module spins up one Hapi server for every CPU core on the host machine, for increased performance and load handling.
+Node's Cluster module spins up one instance of Apollo server for every CPU core on the host machine, for increased performance and load handling.
 
 ## Apollo Server 2
 

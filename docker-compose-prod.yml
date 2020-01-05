@@ -14,15 +14,15 @@ services:
       - ./common.env
     depends_on:
       - api
-  
+
   api:
     container_name: api
     build:
       context: .
       dockerfile: Dockerfile.node
       args:
-        PACKAGE_PATH: ./api
-        WORKING_DIR: /usr/src/api
+        PACKAGE_PATH: api
+        WORKING_DIR: /usr/src/
     expose:
       - 8000
     ports:
