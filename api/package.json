@@ -14,7 +14,7 @@
     "graphql-tools": "^4.0.3",
     "joi": "^14.3.1",
     "knex": "^0.16.3",
-    "lodash.merge": "^4.6.1",
+    "lodash.merge": "^4.6.2",
     "objection": "^1.4.0",
     "objection-guid": "^3.0.2",
     "pg": "^7.8.0",
