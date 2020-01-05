@@ -1,7 +1,7 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { reset } from './cssReset';
 
-injectGlobal`
+export default createGlobalStyle`
   ${reset}
 
   html {

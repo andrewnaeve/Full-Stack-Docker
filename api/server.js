@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') {
     for (let i = 0; i < numCPUs; i++) {
       cluster.fork();
     }
-    cluster.on('exit', (worker, code, signal) => {
+    cluster.on('exit', (worker, _code, _signal) => {
       console.log(`Worker ${worker.process.pid} died`);
       cluster.fork();
     });
