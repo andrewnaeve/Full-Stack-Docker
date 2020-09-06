@@ -5,7 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "apollo-server": "^2.14.2",
-    "bcrypt": "^3.0.3",
+    "bcrypt": "^5.0.0",
     "confidence": "^4.0.1",
     "esm": "3.1.0",
     "graphql": "14.0.2",
