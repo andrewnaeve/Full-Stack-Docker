@@ -10,7 +10,7 @@
     "esm": "3.1.0",
     "graphql": "14.0.2",
     "graphql-middleware": "^3.0.0",
-    "graphql-shield": "^5.1.0",
+    "graphql-shield": "^7.3.5",
     "graphql-tools": "^4.0.3",
     "joi": "^14.3.1",
     "knex": "^0.19.5",
